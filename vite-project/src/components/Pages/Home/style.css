@@ -1,0 +1,11 @@
+
+.divTitle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.divButton {
+    display: flex;
+    justify-content: end;
+}

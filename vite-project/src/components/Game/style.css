@@ -1,0 +1,32 @@
+
+.detailsButton, .deleteButton{
+    background-color: #F4ACB7;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.card-header-title {
+    background-color: #FF5D8F;
+    margin-top: 20px;
+}
+  
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%; 
+
+
+  

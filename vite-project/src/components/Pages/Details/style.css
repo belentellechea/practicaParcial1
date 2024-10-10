@@ -1,0 +1,16 @@
+.button.backButton {
+    border-color: black;
+    background-color: #FF97B7;
+}
+
+.info {
+    background-color: white;
+    margin: 15px;
+    padding: 20px;
+}
+
+.divTitle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
