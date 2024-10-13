@@ -3,8 +3,9 @@ import axios from "axios";
 
 const url = `http://localhost:3000/api/games`;
 
-export function Modal({ visible, setVisible }) {
-    async function addGame(e) {
+export function Modal({ visible, setVisible, postGame }) {
+
+    function addGame(e) {
         e.preventDefault(); 
 
         const newGame = {
@@ -14,12 +15,8 @@ export function Modal({ visible, setVisible }) {
             categories: e.target.category.value, 
         };
 
-        try {
-            await axios.post(url, newGame); 
-            setVisible("none"); 
-        } catch (error) {
-            console.error("Error añadiendo el juego:", error); 
-        }
+        postGame(newGame); 
+        cerrarModal(); 
     }
 
     function cerrarModal() {

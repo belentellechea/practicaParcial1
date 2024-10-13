@@ -8,16 +8,8 @@ export function Game(props){
 
     const navigate = useNavigate(); 
 
-    async function deleteGame() {
-        try {
-            await axios.delete(`${url}/${props.id}`, {
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            });            
-        } catch (error) {
-            console.error("Error eliminando la tarea:", error);
-        }
+    function deleteGame() {
+        props.deleteGame(props.id);
     };
 
     function goToDetails() {

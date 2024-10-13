@@ -2,7 +2,7 @@ import "./style.css"
 import { useState } from "react";
 import { Modal } from "../Modal";
  
-export function Button() {
+export function Button({postGame}) {
     const [visible, setVisible] = useState("none")
 
     function openModal(){
@@ -16,6 +16,7 @@ export function Button() {
             </button>
             <Modal 
                 visible={visible} setVisible={setVisible}
+                postGame= {postGame}
             />
         </>
     )
