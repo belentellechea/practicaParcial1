@@ -1,9 +1,8 @@
 import "./style.css";
-import axios from "axios";
-
-const url = `http://localhost:3000/api/games`;
+import { useRef } from "react";
 
 export function Modal({ visible, setVisible, postGame }) {
+    const formRef = useRef(null);
 
     function addGame(e) {
         e.preventDefault(); 
@@ -16,10 +15,18 @@ export function Modal({ visible, setVisible, postGame }) {
         };
 
         postGame(newGame); 
+        resetForm(); 
         cerrarModal(); 
     }
 
+    function resetForm() {
+        if (formRef.current) {
+            formRef.current.reset(); //restablece los campos del formulario
+        }
+    }
+
     function cerrarModal() {
+        resetForm();
         setVisible("none"); 
     }
 
@@ -27,7 +34,7 @@ export function Modal({ visible, setVisible, postGame }) {
         <div className="modal" style={{ display: visible }}> 
             <div className="modal-content">
                 <h2>Nuevo juego</h2>
-                <form id="gameForm" onSubmit={addGame}>
+                <form id="gameForm" onSubmit={addGame} ref={formRef}>
                     <div className="columns is-mobile">
                         <div className="column">
                             <div className="box">

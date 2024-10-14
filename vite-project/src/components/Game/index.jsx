@@ -1,8 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import "./style.css"
-
-const url= `http://localhost:3000/api/games`;
 
 export function Game(props){
 

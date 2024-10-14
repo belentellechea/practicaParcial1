@@ -16,7 +16,6 @@ export function Details() {
         async function fetchGameDetails() {
         try {
             const response = await axios.get(`${url}/${id}`);
-            console.log("Respuesta del servidor:", response.data);
             setGame(response.data[0]); 
         } catch (error) {
             console.error("Error fetching game details:", error);
